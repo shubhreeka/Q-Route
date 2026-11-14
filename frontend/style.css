@@ -1,0 +1,392 @@
+/* --------------------
+   Q-Route Modernized
+   -------------------- */
+
+/* Theme tokens */
+:root{
+  --bg-dark: #050A1F;
+  --panel: rgba(255,255,255,0.03);
+  --glass-bg: rgba(255,255,255,0.04);
+  --accent: #6C53FF;          /* purple */
+  --accent-2: #00E5FF;        /* cyan */
+  --muted: #9AA3C7;
+  --text: #E8EEF8;
+  --radius: 14px;
+  --glass-border: rgba(255,255,255,0.06);
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+/* --- Global & Theme --- */
+:root {
+    --primary-glow: #00f2ff;  /* Bright Cyan - This is the blue route color */
+    --secondary-glow: #8a2be2; /* Purple used elsewhere */
+    --dark-bg: #0a0a1a;        /* Dark background color */
+    --light-text: #e0e0e0;     /* Light text color */
+    --dark-text: #a0a0a0;       /* Muted/darker text color */
+    --glass-bg: rgba(10, 10, 30, 0.6); /* Semi-transparent panel background */
+}
+
+/* --- The rest of your style.css code goes below this --- */
+
+body {
+    /* ... your existing body styles ... */
+}
+
+/* ... etc ... */
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg,#040717 0%, #071033 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ---------- Landing ---------- */
+.landing-body{display:flex;align-items:center;justify-content:center;height:100vh;position:relative;overflow:hidden;padding:30px}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.wave{position:absolute;border-radius:50%;filter:blur(70px);opacity:0.55;transform:translateZ(0)}
+.wave-1{width:800px;height:800px;background:radial-gradient(circle at 30% 30%,var(--accent),transparent 40%);left:-15%;top:-10%;animation:float 12s ease-in-out infinite}
+.wave-2{width:700px;height:700px;background:radial-gradient(circle at 70% 70%,var(--accent-2),transparent 35%);right:-5%;bottom:-10%;animation:float 14s ease-in-out infinite reverse}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-20px)}100%{transform:translateY(0)}}
+.sidebar {
+    width: 350px;
+    background-color: #111122;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack items vertically */
+    height: 100vh; /* Make sidebar full height */
+    padding: 20px;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+    box-sizing: border-box; /* Include padding in height/width */
+}
+/* Glass container */
+.glass-container{
+  position:relative;z-index:2;
+  width:100%;max-width:1100px;padding:36px;border-radius:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid var(--glass-border); box-shadow:var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.landing-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.landing-title{font-family:'Poppins',sans-serif;font-size:48px;margin:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{margin:0;color:var(--muted);font-weight:600}
+
+.landing-nav .nav-pill{
+  display:inline-block;padding:10px 16px;border-radius:999px;margin-left:10px;text-decoration:none;color:var(--text);background:transparent;border:1px solid transparent;font-weight:600
+}
+.nav-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 24px rgba(108,83,255,0.12);color:white}
+
+/* Hero */
+.landing-main .hero{display:flex;gap:36px;align-items:center}
+.hero-left{flex:1}
+.hero-head{font-size:28px;margin:0 0 12px 0;font-weight:700;color:var(--text)}
+.hero-sub{color:var(--muted);margin:0 0 20px 0;line-height:1.45}
+.cta-row{display:flex;gap:12px}
+.cta-button{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:12px 20px;border-radius:999px;color:white;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(108,83,255,0.12);transition:transform .18s ease}
+.cta-button:hover{transform:translateY(-5px)}
+.ghost-button{padding:12px 20px;border-radius:999px;color:var(--text);background:transparent;border:1px solid rgba(255,255,255,0.04);text-decoration:none}
+
+/* Hero preview */
+.hero-right{width:420px;display:flex;justify-content:center}
+.device-mock{position:relative;width:320px;height:220px;border-radius:16px;overflow:hidden;border:1px solid var(--glass-border);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+.mock-image{width:100%;height:100%;object-fit:cover}
+.mock-glow{position:absolute;inset:-20%;filter:blur(40px);background:radial-gradient(circle at 20% 20%, rgba(108,83,255,0.45), transparent 25%)}
+
+/* Features */
+.features-grid{display:flex;gap:18px;margin-top:26px}
+.feature-card{flex:1;padding:18px;border-radius:12px;background:var(--panel);border:1px solid var(--glass-border)}
+.feature-card h3{margin:0 0 8px 0;color:var(--accent)}
+.feature-card p{color:var(--muted);margin:0}
+
+/* Footer */
+.landing-footer{text-align:center;margin-top:20px;color:var(--muted)}
+
+/* ---------- App Page ---------- */
+.app-body{display:flex;height:100vh;overflow:hidden}
+.sidebar{width:360px;padding:22px;background:linear-gradient(180deg, rgba(10,12,25,0.9), rgba(5,7,18,0.95));border-right:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:12px}
+.sidebar-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sidebar-header h2{margin:0;color:var(--accent)}
+.muted{color:var(--muted);font-size:13px;margin:4px 0 0}
+
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:14px;border:1px solid var(--glass-border)}
+.instructions-list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+#stops-list{list-style:none;margin:6px 0 0;padding:0;max-height:220px;overflow:auto;color:var(--text)}
+#stops-list li{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);font-size:14px}
+#stops-list li.empty{color:var(--muted)}
+
+/* Footer buttons */
+.sidebar-footer{display:flex;gap:10px;margin-top:auto}
+.btn{padding:12px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 10px 30px rgba(108,83,255,0.14)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.back-link{color:var(--muted);text-decoration:none}
+
+/* Map container */
+.map-container{flex:1;height:100vh;position:relative}
+.leaflet-container{height:100%;width:100%}
+
+/* Loader */
+.loader{position:fixed;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.6), rgba(2,6,23,0.8));display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999}
+.loader-circle{width:100px;height:100px;border-radius:50%;background:conic-gradient(var(--accent),var(--accent-2),var(--accent));filter:blur(10px);box-shadow:0 0 40px rgba(108,83,255,0.18);animation:spin 1.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader p{margin-top:12px;color:var(--muted)}
+
+/* Animated route styles (pulsing markers & line) */
+.leaflet-marker-icon.custom-pulse{width:18px;height:18px;border-radius:50%;box-shadow:0 0 18px rgba(108,83,255,0.45);position:relative;border:2px solid white}
+.leaflet-marker-icon.custom-pulse::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:rgba(108,83,255,0.18);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}}
+/* ---------- Learn Page ---------- */
+.learn-body {
+    min-height: 100vh;
+    background: linear-gradient(180deg,#040717 0%, #071033 100%);
+}
+
+.learn-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+}
+
+.nav-brand { font-weight: 800; color: var(--accent); text-decoration: none; }
+.nav-link { background: transparent; padding: 10px 16px; border-radius: 12px; text-decoration: none; color: var(--text); }
+
+.learn-container { max-width: 1100px; margin: 36px auto; padding: 0 20px; }
+.learn-hero { text-align: left; margin-bottom: 24px; }
+.learn-hero h1 { font-size: 36px; margin: 0; }
+.learn-hero .lead { color: var(--muted); margin-top: 6px; }
+
+.learn-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.learn-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px;
+    background: transparent;          /* unified look */
+    border-radius: 12px;
+}
+
+.learn-card.alt { flex-direction: row-reverse; }
+
+.card-content h2 { margin: 0; color: var(--accent); }
+.card-content h3 { margin: 6px 0; color: var(--text); font-size: 22px; }
+
+.card-visual {
+    width: 300px;          /* bigger images */
+    height: 200px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width:900px){
+  .learn-card, .learn-card.alt { flex-direction: column; align-items: flex-start; }
+  .card-visual { width: 100%; height: 180px; }
+}
+
+/* ---------- Learn Page ---------- */
+.learn-body{min-height:100vh}
+.learn-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
+.nav-brand{font-weight:800;color:var(--accent);text-decoration:none}
+.nav-link{background:var(--panel);padding:10px 16px;border-radius:12px;text-decoration:none;color:var(--text)}
+.learn-container{max-width:1100px;margin:36px auto;padding:0 20px}
+.learn-hero{text-align:left;margin-bottom:24px}
+.learn-hero h1{font-size:36px;margin:0}
+.learn-hero .lead{color:var(--muted);margin-top:6px}
+
+.learn-grid{display:grid;gap:30px}
+.learn-card{display:flex;align-items:center;gap:22px;padding:18px;background:var(--panel);border-radius:12px;border:1px solid var(--glass-border)}
+.learn-card.alt{flex-direction:row-reverse}
+.card-content h2{margin:0;color:var(--accent)}
+.card-content h3{margin:6px 0;color:var(--text);font-size:22px}
+.card-visual {
+    width: 700px;           /* increase width */
+    height: 270px;          /* increase height */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6); /* keep existing shadow */
+}
+.learn-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.learn-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    background: var(--panel);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.learn-card.alt {
+    flex-direction: row-reverse; /* alternate layout for variety */
+}
+
+.card-content {
+    flex: 1; /* text takes remaining width */
+}
+
+.card-visual {
+    flex-shrink: 0;            /* prevents image shrinking */
+    width: 320px;              /* square dimensions */
+    height: 320px;
+    border-radius: 12px;
+    background-size: cover;    /* fill square without stretching */
+    background-position: center;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6)}
+.modal-content{width:calc(100% - 48px);max-width:600px;padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border);box-shadow:var(--shadow);transform:translateY(10px);animation:modalIn .18s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close-btn{position:absolute;right:20px;top:14px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:900px){
+  .landing-main .hero{flex-direction:column-reverse;gap:18px}
+  .hero-right{width:100%}
+  .sidebar{width:100%;position:fixed;bottom:0;left:0;right:0;display:flex;flex-direction:row;gap:10px;padding:12px;height:auto}
+  .app-body{flex-direction:column-reverse}
+  .map-container{height:60vh}
+}
+/* --- Features Page Grid - Single Row Layout --- */
+.features-page .features-grid {
+    display: flex;
+    justify-content: space-between; /* evenly spread across screen */
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap; /* force single line */
+    margin-top: 40px;
+    overflow-x: auto; /* allow horizontal scroll if screen too small */
+    padding: 0 10px;
+}
+
+.feature-card {
+    flex: 1 1 0;
+    max-width: 220px; /* card width */
+    background: rgba(10, 10, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+}
+
+.feature-card h3 {
+    color: #00f2ff;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* Slightly bigger images */
+.feature-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(0, 242, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+    transform: scale(1.1);
+}
+
+/* Loader: big blue ball + white text, no spinner or overlay */
+.loader {
+    position: fixed;         /* float above map */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10000;          /* above everything */
+}
+
+.loader.hidden {
+    display: none;
+}
+
+.loader-circle {
+    width: 60px;             /* big blue ball */
+    height: 60px;
+    background-color: #00f0ff;  /* bright blue */
+    border-radius: 50%;      /* circle */
+    margin-bottom: 15px;
+}
+
+.loader p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;          /* white text */
+    margin: 0;
+    text-align: center;
+}
+/* --- Add this to the bottom of style.css --- */
+.hardware-panel .muted {
+  font-size: 0.9em;
+  color: var(--dark-text);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-glow);
+  background-color: var(--glass-bg);
+  color: var(--light-text);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1em;
+}
+
+.dropdown-select:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+/* --- Styling for Stop Labels on Map --- */
+.stop-label-tooltip {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 10px;
+  white-space: nowrap;
+  box-shadow: none; /* Remove default leaflet shadow */
+}

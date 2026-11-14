@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Q-Route | Quantum Trajectory Optimization</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+  <div class="hero-bg">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="particle-grid"></div>
+  </div>
+
+  <div class="glass-container landing-glass">
+    <header class="landing-header">
+      <div>
+        <h1 class="landing-title">Q-Route</h1>
+        <p class="tagline">Quantum Trajectory Optimization Visualized</p>
+      </div>
+      <nav class="landing-nav">
+        <a class="nav-pill" href="learn.html">Learn</a>
+        <a class="nav-pill" href="features.html">Features</a>
+        <a class="nav-pill nav-cta" href="app.html">Open Q-Route</a>
+      </nav>
+    </header>
+
+    <main class="landing-main">
+      <section class="hero">
+        <div class="hero-left">
+          <h2 class="hero-head">Solve the TSP with a hybrid quantum-classical approach.</h2>
+          <p class="hero-sub">Map user-defined delivery coordinates to an Ising model, and explore an optimized route produced by a simulated QAOA backend. Beautiful, interactive, and responsive.</p>
+
+          <div class="cta-row">
+            <a class="cta-button" href="app.html">Open Q-Route</a>
+            <a class="ghost-button" href="features.html">Features</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="device-mock">
+            <img src="1.png" alt="Q-Route preview" class="mock-image">
+            <div class="mock-glow"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features-grid">
+        <div class="feature-card">
+          <h3>Hybrid QAOA</h3>
+          <p>Combines classical optimizers with variational quantum circuits to search combinatorial spaces efficiently.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Animated Routes</h3>
+          <p>Visual route drawing with pulsing start/end markers and progressive polyline animation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Interactive Learning</h3>
+          <p>Glossary modal with definitions and curated quantum explanations.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="landing-footer">
+      <small>Quantum Optimization Q-Route ©  <span id="year"></span></small>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-Route | Features</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+  <div class="hero-bg">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="particle-grid"></div>
+  </div>
+
+  <div class="glass-container landing-glass">
+    <header class="landing-header">
+      <div>
+        <h1 class="landing-title">Q-Route Features</h1>
+        <p class="tagline">Explore the quantum-classical optimizations in action</p>
+      </div>
+      <nav class="landing-nav">
+        <a class="nav-pill" href="index.html">Home</a>
+        <a class="nav-pill" href="learn.html">Learn</a>
+        <a class="nav-pill nav-cta" href="app.html">Open Q-Route</a>
+      </nav>
+    </header>
+
+    <main class="landing-main features-page">
+      <section class="features-grid">
+        <div class="feature-card">
+          <img src="2.png" alt="Hybrid QAOA" class="feature-image">
+          <h3>Hybrid QAOA</h3>
+          <p>Combines classical optimizers with variational quantum circuits to explore complex combinatorial spaces efficiently. Ideal for near-term quantum hardware.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="3.png" alt="Animated Routes" class="feature-image">
+          <h3>Animated Routes</h3>
+          <p>Interactive route visualization with pulsing start and end markers, dynamic polylines, and real-time path animation. See optimization in motion.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="4.png" alt="Interactive Learning" class="feature-image">
+          <h3>Interactive Learning</h3>
+          <p>Glossary modal with curated quantum definitions, helping users understand superposition, entanglement, and QAOA in a visually interactive way.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="5.png" alt="Real-time Optimization" class="feature-image">
+          <h3>Real-Time Optimization</h3>
+          <p>Experience near-instant route computation with a hybrid quantum-classical solver, allowing users to add stops and immediately see the optimal path.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="6.png" alt="User-Friendly Interface" class="feature-image">
+          <h3>User-Friendly Interface</h3>
+          <p>Beautiful, dark-glass interface with smooth animations, intuitive controls, and responsive design for all devices, making it visually appealing.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="landing-footer">
+      <small>Quantum Optimization Q-Route © <span id="year"></span></small>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
