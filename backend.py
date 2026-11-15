@@ -70,8 +70,15 @@ def get_sampler(backend_name):
 
     if backend_name == 'real_hardware':
         print("Backend: Real Hardware selected. Connecting to IBM Quantum...")
-        service = QiskitRuntimeService()
-        backend = service.least_busy(min_num_qubits=10, simulator=False)
+        try:
+            service = QiskitRuntimeService()
+            backend = service.least_busy(min_num_qubits=10, simulator=False)
+        except Exception as e:
+            print(f"IBM Quantum connection failed: {type(e).__name__}")
+            raise RuntimeError(
+                "Could not connect to IBM Quantum hardware with the saved token. IBM retired its old login "
+                "service in 2025, so older tokens no longer work; a new API key from quantum.cloud.ibm.com "
+                "is needed. The ideal and noisy simulators work without a token.") from None
         print(f"Using real backend: {backend.name}")
         return IBMSampler(backend=backend)
 

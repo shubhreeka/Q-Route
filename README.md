@@ -101,6 +101,10 @@ copy .env.example .env                  # then put your token after IBM_QUANTUM_
 python backend.py
 ```
 
+> **Note:** the hardware runs reported here used IBM's original `ibm_quantum` channel, which IBM retired in 2025.
+> Running on hardware today needs an API key from [quantum.cloud.ibm.com](https://quantum.cloud.ibm.com) and a
+> recent `qiskit-ibm-runtime` that supports the new platform. The ideal and noisy simulators need no key.
+
 ## Limitations and next steps
 
 - Limited to **5 points**, because the *n²* encoding needs 25 qubits and simulation cost grows exponentially.
