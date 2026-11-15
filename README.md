@@ -97,7 +97,7 @@ Then open `frontend/index.html` in your browser, go to the app, choose 2–5 poi
 [quantum.ibm.com](https://quantum.ibm.com), copy your API token and set it before starting the backend:
 
 ```bash
-set IBM_QUANTUM_TOKEN=your-token        # Windows (macOS/Linux: export IBM_QUANTUM_TOKEN=your-token)
+copy .env.example .env                  # then put your token after IBM_QUANTUM_TOKEN= in .env (macOS/Linux: cp)
 python backend.py
 ```
 
